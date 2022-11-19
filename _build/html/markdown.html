@@ -1,499 +1,2175 @@
-
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="generator"
+            content="Docutils 0.17.1: http://docutils.sourceforge.net/"
+        />
 
-    <title>Markdown Files &#8212; My sample book</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+        <title>Planos Afines &#8212; Geo{book}</title>
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+        <!-- Loaded before other Sphinx assets -->
+        <link
+            href="_static/styles/theme.css?digest=1999514e3f237ded88cf"
+            rel="stylesheet"
+        />
+        <link
+            href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf"
+            rel="stylesheet"
+        />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+        <link
+            rel="stylesheet"
+            href="_static/vendor/fontawesome/5.13.0/css/all.min.css"
+        />
+        <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            crossorigin
+            href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2"
+        />
+        <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            crossorigin
+            href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2"
+        />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
+        <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+        <link
+            rel="stylesheet"
+            href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9"
+            type="text/css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="_static/togglebutton.css"
+        />
+        <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+        <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="_static/sphinx-thebe.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css"
+        />
 
-    <!-- Google Analytics -->
-    
-  </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+        <!-- Pre-loaded scripts that we'll load fully later -->
+        <link
+            rel="preload"
+            as="script"
+            href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"
+        />
 
-    
-    <div class="container-fluid" id="banner"></div>
+        <script
+            data-url_root="./"
+            id="documentation_options"
+            src="_static/documentation_options.js"
+        ></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+        <script>
+            let toggleHintShow = "Click to show";
+        </script>
+        <script>
+            let toggleHintHide = "Click to hide";
+        </script>
+        <script>
+            let toggleOpenOnPrint = "true";
+        </script>
+        <script src="_static/togglebutton.js"></script>
+        <script>
+            var togglebuttonSelector =
+                ".toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell";
+        </script>
+        <script src="_static/design-tabs.js"></script>
+        <script>
+            const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js";
+            const thebe_selector = ".thebe,.cell";
+            const thebe_selector_input = "pre";
+            const thebe_selector_output = ".output, .cell_output";
+        </script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="next" title="Content with notebooks" href="notebooks.html" />
+        <link
+            rel="prev"
+            title="Welcome to your Jupyter Book"
+            href="intro.html"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="docsearch:language" content="None" />
 
-    
+        <!-- Google Analytics -->
+    </head>
+    <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+        <!-- Checkboxes to toggle the left sidebar -->
+        <input
+            type="checkbox"
+            class="sidebar-toggle"
+            name="__navigation"
+            id="__navigation"
+            aria-label="Toggle navigation sidebar"
+        />
+        <label class="overlay overlay-navbar" for="__navigation">
+            <div class="visually-hidden">Toggle navigation sidebar</div>
+        </label>
+        <!-- Checkboxes to toggle the in-page toc -->
+        <input
+            type="checkbox"
+            class="sidebar-toggle"
+            name="__page-toc"
+            id="__page-toc"
+            aria-label="Toggle in-page Table of Contents"
+        />
+        <label class="overlay overlay-pagetoc" for="__page-toc">
+            <div class="visually-hidden">Toggle in-page Table of Contents</div>
+        </label>
+        <!-- Headers at the top -->
+        <div class="announcement header-item noprint"></div>
+        <div class="header header-item noprint"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">My sample book</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
-  </a>
- </li>
-</ul>
+        <div class="container-fluid" id="banner"></div>
 
-    </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
-</div>
+        <div class="container-xl">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="bd-sidebar noprint" id="site-navigation">
+                    <div class="bd-sidebar__content">
+                        <div class="bd-sidebar__top">
+                            <div class="navbar-brand-box">
+                                <a
+                                    class="navbar-brand text-wrap"
+                                    href="index.html"
+                                >
+                                    <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
 
+                                    <img
+                                        src="_static/logo.png"
+                                        class="logo"
+                                        alt="logo"
+                                    />
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/markdown.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
-</div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directives">
-   Sample Roles and Directives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
-  </a>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Markdown Files</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
+                                    <h1 class="site-logo" id="site-title">
+                                        My sample book
+                                    </h1>
+                                </a>
+                            </div>
+                            <form
+                                class="bd-search d-flex align-items-center"
+                                action="search.html"
+                                method="get"
+                            >
+                                <i class="icon fas fa-search"></i>
+                                <input
+                                    type="search"
+                                    class="form-control"
+                                    name="q"
+                                    id="search-input"
+                                    placeholder="Search this book..."
+                                    aria-label="Search this book..."
+                                    autocomplete="off"
+                                />
+                            </form>
+                            <nav
+                                class="bd-links"
+                                id="bd-docs-nav"
+                                aria-label="Main"
+                            >
+                                <div class="bd-toc-item active">
+                                    <ul
+                                        class="nav bd-sidenav bd-sidenav__home-link"
+                                    >
+                                        <li class="toctree-l1 current active">
+                                            <a
+                                                class="reference internal"
+                                                href="#"
+                                            >
+                                                Introducción
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="nav bd-sidenav">
+                                        <li class="toctree-l1">
+                                            <a
+                                                class="reference internal"
+                                                href="markdown.html"
+                                            >
+                                                Planos Afines
+                                            </a>
+                                        </li>
+                                        <li class="toctree-l1">
+                                            <a
+                                                class="reference internal"
+                                                href="notebooks.html"
+                                            >
+                                                Dilataciones
+                                            </a>
+                                        </li>
+                                        <li class="toctree-l1">
+                                            <a
+                                                class="reference internal"
+                                                href="markdown-notebooks.html"
+                                            >
+                                                Simetrias centrales
+                                            </a>
+                                        </li>
+                                        <li class="toctree-l1">
+                                            <a
+                                                class="reference internal"
+                                                href="notebooks-markdown.html"
+                                            >
+                                                Simetrias parelelas
+                                            </a>
+                                        </li>
+                                        <li class="toctree-l1">
+                                            <a
+                                                class="reference internal"
+                                                href="notebooks-markdown.html"
+                                            >
+                                                Ortogonalidades
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
                         </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directives">
-   Sample Roles and Directives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
-  </a>
- </li>
-</ul>
+                        <div class="bd-sidebar__bottom">
+                            <!-- To handle the deprecated key -->
 
-                        </nav>
+                            <div class="navbar_extra_footer">
+                                Powered by
+                                <a href="https://jupyterbook.org"
+                                    >Jupyter Book</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rtd-footer-container"></div>
+                </div>
+
+                <!-- A tiny helper pixel to detect if we've scrolled -->
+                <div class="sbt-scroll-pixel-helper"></div>
+                <!-- Main content -->
+                <div class="col py-0 content-container">
+                    <div class="header-article row sticky-top noprint">
+                        <div class="col py-1 d-flex header-article-main">
+                            <div class="header-article__left">
+                                <label
+                                    for="__navigation"
+                                    class="headerbtn"
+                                    data-toggle="tooltip"
+                                    data-placement="right"
+                                    title="Toggle navigation"
+                                >
+                                    <span class="headerbtn__icon-container">
+                                        <i class="fas fa-bars"></i>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="header-article__right">
+                                <button
+                                    onclick="toggleFullScreen()"
+                                    class="headerbtn"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Fullscreen mode"
+                                >
+                                    <span class="headerbtn__icon-container">
+                                        <i class="fas fa-expand"></i>
+                                    </span>
+                                </button>
+
+                                <div
+                                    class="menu-dropdown menu-dropdown-repository-buttons"
+                                >
+                                    <button
+                                        class="headerbtn menu-dropdown__trigger"
+                                        aria-label="Source repositories"
+                                    >
+                                        <i class="fab fa-github"></i>
+                                    </button>
+                                    <div class="menu-dropdown__content">
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="https://github.com/executablebooks/jupyter-book"
+                                                    class="headerbtn"
+                                                    data-toggle="tooltip"
+                                                    data-placement="left"
+                                                    title="Source repository"
+                                                >
+                                                    <span
+                                                        class="headerbtn__icon-container"
+                                                    >
+                                                        <i
+                                                            class="fab fa-github"
+                                                        ></i>
+                                                    </span>
+                                                    <span
+                                                        class="headerbtn__text-container"
+                                                        >repository</span
+                                                    >
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a
+                                                    href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here."
+                                                    class="headerbtn"
+                                                    data-toggle="tooltip"
+                                                    data-placement="left"
+                                                    title="Open an issue"
+                                                >
+                                                    <span
+                                                        class="headerbtn__icon-container"
+                                                    >
+                                                        <i
+                                                            class="fas fa-lightbulb"
+                                                        ></i>
+                                                    </span>
+                                                    <span
+                                                        class="headerbtn__text-container"
+                                                        >open issue</span
+                                                    >
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="menu-dropdown menu-dropdown-download-buttons"
+                                >
+                                    <button
+                                        class="headerbtn menu-dropdown__trigger"
+                                        aria-label="Download this page"
+                                    >
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <div class="menu-dropdown__content">
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="_sources/markdown.md"
+                                                    class="headerbtn"
+                                                    data-toggle="tooltip"
+                                                    data-placement="left"
+                                                    title="Download source file"
+                                                >
+                                                    <span
+                                                        class="headerbtn__icon-container"
+                                                    >
+                                                        <i
+                                                            class="fas fa-file"
+                                                        ></i>
+                                                    </span>
+                                                    <span
+                                                        class="headerbtn__text-container"
+                                                        >.md</span
+                                                    >
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <button
+                                                    onclick="printPdf(this)"
+                                                    class="headerbtn"
+                                                    data-toggle="tooltip"
+                                                    data-placement="left"
+                                                    title="Print to PDF"
+                                                >
+                                                    <span
+                                                        class="headerbtn__icon-container"
+                                                    >
+                                                        <i
+                                                            class="fas fa-file-pdf"
+                                                        ></i>
+                                                    </span>
+                                                    <span
+                                                        class="headerbtn__text-container"
+                                                        >.pdf</span
+                                                    >
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <label
+                                    for="__page-toc"
+                                    class="headerbtn headerbtn-page-toc"
+                                >
+                                    <span class="headerbtn__icon-container">
+                                        <i class="fas fa-list"></i>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Table of contents -->
+                        <div class="col-md-3 bd-toc show noprint">
+                            <div class="tocsection onthispage pt-5 pb-3">
+                                <i class="fas fa-list"></i> Contents
+                            </div>
+                            <nav id="bd-toc-nav" aria-label="Page">
+                                <ul class="visible nav section-nav flex-column">
+                                    <li class="toc-h2 nav-item toc-entry">
+                                        <a
+                                            class="reference internal nav-link"
+                                            href="#what-is-myst"
+                                        >
+                                            What is MyST?
+                                        </a>
+                                    </li>
+                                    <li class="toc-h2 nav-item toc-entry">
+                                        <a
+                                            class="reference internal nav-link"
+                                            href="#sample-roles-and-directives"
+                                        >
+                                            Sample Roles and Directives
+                                        </a>
+                                    </li>
+                                    <li class="toc-h2 nav-item toc-entry">
+                                        <a
+                                            class="reference internal nav-link"
+                                            href="#citations"
+                                        >
+                                            Citations
+                                        </a>
+                                    </li>
+                                    <li class="toc-h2 nav-item toc-entry">
+                                        <a
+                                            class="reference internal nav-link"
+                                            href="#learn-more"
+                                        >
+                                            Learn more
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="article row">
+                        <div class="col pl-md-3 pl-lg-5 content-container">
+                            <!-- Table of contents that is only displayed when printing the page -->
+                            <div id="jb-print-docs-body" class="onlyprint">
+                                <h1>Markdown Files</h1>
+                                <!-- Table of contents -->
+                                <div id="print-main-content">
+                                    <div id="jb-print-toc">
+                                        <div>
+                                            <h2>Contents</h2>
+                                        </div>
+                                        <nav aria-label="Page">
+                                            <ul
+                                                class="visible nav section-nav flex-column"
+                                            >
+                                                <li
+                                                    class="toc-h2 nav-item toc-entry"
+                                                >
+                                                    <a
+                                                        class="reference internal nav-link"
+                                                        href="#what-is-myst"
+                                                    >
+                                                        What is MyST?
+                                                    </a>
+                                                </li>
+                                                <li
+                                                    class="toc-h2 nav-item toc-entry"
+                                                >
+                                                    <a
+                                                        class="reference internal nav-link"
+                                                        href="#sample-roles-and-directives"
+                                                    >
+                                                        Sample Roles and
+                                                        Directives
+                                                    </a>
+                                                </li>
+                                                <li
+                                                    class="toc-h2 nav-item toc-entry"
+                                                >
+                                                    <a
+                                                        class="reference internal nav-link"
+                                                        href="#citations"
+                                                    >
+                                                        Citations
+                                                    </a>
+                                                </li>
+                                                <li
+                                                    class="toc-h2 nav-item toc-entry"
+                                                >
+                                                    <a
+                                                        class="reference internal nav-link"
+                                                        href="#learn-more"
+                                                    >
+                                                        Learn more
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <main id="main-content" role="main">
+                                <div>
+                                    <section
+                                        class="tex2jax_ignore mathjax_ignore"
+                                        id="markdown-files"
+                                    >
+                                        <header>
+                                            <h1 class="page-title">
+                                                Planos afines
+                                            </h1>
+                                        </header>
+                                        <div class="page-body">
+                                            <blockquote
+                                                id="e0fc85e1-c77d-4d8b-a061-e955e82ddea8"
+                                                class="block-color-gray"
+                                            >
+                                                Este escrito pretende ser un
+                                                complemento al libro “<em
+                                                    >La geometría a través de
+                                                    las transformaciones en el
+                                                    contexto de los planos
+                                                    afines</em
+                                                >”, del profesor titular Lorenzo
+                                                Acosta, a modo de material de
+                                                estudio interactivo para la
+                                                asignatura<strong>
+                                                    Geometría Elemental</strong
+                                                >
+                                                de la UNAL dictada por el
+                                                profesor Andrés Villaveces.
+                                            </blockquote>
+                                            <hr
+                                                id="e84d27c8-14b4-427f-b4d4-03685c8d2016"
+                                            />
+                                            <p
+                                                id="2e77042d-c839-4eca-9411-549b33591f99"
+                                                class=""
+                                            ></p>
+                                            <h2
+                                                id="9bdfb5a4-c75f-42c7-90ff-eed5e0b086d8"
+                                                class="block-color-gray_background"
+                                            >
+                                                Un plano afín se define bajo 3
+                                                axiomas:
+                                            </h2>
+                                            <h3
+                                                id="56720d7c-390c-4d5f-b5e7-91bd47b35057"
+                                                class=""
+                                            >
+                                                <mark
+                                                    class="highlight-yellow_background"
+                                                    >1.</mark
+                                                >
+                                                Por dos puntos pasa una única
+                                                línea
+                                            </h3>
+                                            <h3
+                                                id="146b2370-c3af-4ebc-8267-90373ec2bc17"
+                                                class=""
+                                            >
+                                                <mark
+                                                    class="highlight-blue_background"
+                                                    >2.</mark
+                                                >Un punto y una línea definen
+                                                una única paralela que contiene
+                                                al punto.
+                                            </h3>
+                                            <h3
+                                                id="6730de6d-f0da-4d6e-9d2e-3adafb917925"
+                                                class=""
+                                            >
+                                                <mark
+                                                    class="highlight-purple_background"
+                                                    >3.</mark
+                                                >Existen 3 puntos no colineales.
+                                            </h3>
+                                            <h2
+                                                id="709e1084-a49d-4152-af7c-e50e18b8fb77"
+                                                class=""
+                                            >
+                                                Estos se pueden representar
+                                                gráficamente:
+                                            </h2>
+                                            <div
+                                                id="d83dd1d5-55ed-4b3c-804e-2b4f263223fa"
+                                                class="column-list"
+                                            >
+                                                <div
+                                                    id="7976edbd-ac58-491f-8b8b-d4dfc0b42080"
+                                                    style="width: 18.75%"
+                                                    class="column"
+                                                >
+                                                    <h2
+                                                        id="41a45572-5b56-4477-8252-02a976541aaa"
+                                                        class=""
+                                                    >
+                                                        Primer postulado
+                                                    </h2>
+                                                    <p
+                                                        id="ac4c675f-d0dd-4ae1-a3fd-8a3a593ced43"
+                                                        class=""
+                                                    ></p>
+                                                </div>
+                                                <div
+                                                    id="f37fe5e4-e33c-467c-ae88-3bd33965f662"
+                                                    style="width: 81.25%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="ffe19ac0-f173-496f-b880-14a5fb8b0a95"
+                                                    >
+                                                        <div class="source">
+                                                            <a
+                                                                href="https://www.geogebra.org/classic/sn73g92t?embed"
+                                                                >https://www.geogebra.org/classic/sn73g92t?embed</a
+                                                            >
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <p
+                                                id="de1f0a4f-5503-4eff-a84d-8572f0638414"
+                                                class=""
+                                            ></p>
+                                            <div
+                                                id="3738d241-c6de-4d5f-b134-7a388f39965a"
+                                                class="column-list"
+                                            >
+                                                <div
+                                                    id="c35b036c-34b6-41ff-ace7-1963ba2e239b"
+                                                    style="width: 18.75%"
+                                                    class="column"
+                                                >
+                                                    <h2
+                                                        id="77c75b5b-2c75-4918-a831-a796ba35f1ec"
+                                                        class=""
+                                                    >
+                                                        Segundo postulado
+                                                    </h2>
+                                                    <p
+                                                        id="b9b0bb29-c8d6-4e07-8e44-c51f1701d807"
+                                                        class=""
+                                                    ></p>
+                                                </div>
+                                                <div
+                                                    id="749bc86a-694e-47ba-a2ca-eebc7ba18dac"
+                                                    style="width: 81.25%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="634f72e1-587f-4663-b174-7bd4ab073437"
+                                                    >
+                                                        <div class="source">
+                                                            <a
+                                                                href="https://www.geogebra.org/classic/gpk9denp?embed"
+                                                                >https://www.geogebra.org/classic/gpk9denp?embed</a
+                                                            >
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <p
+                                                id="5f721828-affd-4f9e-85f7-8fdf0f61b4f4"
+                                                class=""
+                                            ></p>
+                                            <p
+                                                id="bf81814f-f8e5-4fb9-8489-40a23d460308"
+                                                class=""
+                                            ></p>
+                                            <blockquote
+                                                id="4d753661-0065-4453-b3ec-ed681d6ea22c"
+                                                class=""
+                                            >
+                                                Para la visualización y
+                                                generación de las líneas
+                                                principales de los planos
+                                                realizamos un programa en Python
+                                                haciendo uso de la librería
+                                                SageMath.
+                                            </blockquote>
+                                            <h2
+                                                id="2d8d8dde-758a-4328-93e8-5761d94696e6"
+                                                class=""
+                                            >
+                                                Con el fin de entender más
+                                                claramente el modo en el que se
+                                                generan las líneas y estas cómo
+                                                se relacionan con el orden del
+                                                plano. Veamos el siguiente
+                                                corolario:
+                                            </h2>
+                                            <h2
+                                                id="5d81c864-81f5-4196-b84a-c7be2be85438"
+                                                class=""
+                                            >
+                                                <mark
+                                                    class="highlight-teal_background"
+                                                    >Corolario</mark
+                                                >. Si
+                                                <style>
+                                                    @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                ><span
+                                                    data-token-index="0"
+                                                    contenteditable="false"
+                                                    class="notion-text-equation-token"
+                                                    style="
+                                                        user-select: all;
+                                                        -webkit-user-select: all;
+                                                        -moz-user-select: all;
+                                                    "
+                                                    ><span></span
+                                                    ><span
+                                                        ><span class="katex"
+                                                            ><span
+                                                                class="katex-mathml"
+                                                                ><math
+                                                                    xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                    ><semantics
+                                                                        ><mrow
+                                                                            ><mi
+                                                                                >P</mi
+                                                                            ></mrow
+                                                                        ><annotation
+                                                                            encoding="application/x-tex"
+                                                                            >P</annotation
+                                                                        ></semantics
+                                                                    ></math
+                                                                ></span
+                                                            ><span
+                                                                class="katex-html"
+                                                                aria-hidden="true"
+                                                                ><span
+                                                                    class="base"
+                                                                    ><span
+                                                                        class="strut"
+                                                                        style="
+                                                                            height: 0.68333em;
+                                                                            vertical-align: 0em;
+                                                                        "
+                                                                    ></span
+                                                                    ><span
+                                                                        class="mord mathnormal"
+                                                                        style="
+                                                                            margin-right: 0.13889em;
+                                                                        "
+                                                                        >P</span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ></span
+                                                    ><span>﻿</span></span
+                                                >
+                                                es finito entonces existe
+                                                <style>
+                                                    @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                ><span
+                                                    data-token-index="0"
+                                                    contenteditable="false"
+                                                    class="notion-text-equation-token"
+                                                    style="
+                                                        user-select: all;
+                                                        -webkit-user-select: all;
+                                                        -moz-user-select: all;
+                                                    "
+                                                    ><span></span
+                                                    ><span
+                                                        ><span class="katex"
+                                                            ><span
+                                                                class="katex-mathml"
+                                                                ><math
+                                                                    xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                    ><semantics
+                                                                        ><mrow
+                                                                            ><mi
+                                                                                >n</mi
+                                                                            ><mo
+                                                                                >∈</mo
+                                                                            ><msup
+                                                                                ><mi
+                                                                                    mathvariant="double-struck"
+                                                                                    >Z</mi
+                                                                                ><mo
+                                                                                    >+</mo
+                                                                                ></msup
+                                                                            ></mrow
+                                                                        ><annotation
+                                                                            encoding="application/x-tex"
+                                                                            >n\in\mathbb{Z}^+</annotation
+                                                                        ></semantics
+                                                                    ></math
+                                                                ></span
+                                                            ><span
+                                                                class="katex-html"
+                                                                aria-hidden="true"
+                                                                ><span
+                                                                    class="base"
+                                                                    ><span
+                                                                        class="strut"
+                                                                        style="
+                                                                            height: 0.5782em;
+                                                                            vertical-align: -0.0391em;
+                                                                        "
+                                                                    ></span
+                                                                    ><span
+                                                                        class="mord mathnormal"
+                                                                        >n</span
+                                                                    ><span
+                                                                        class="mspace"
+                                                                        style="
+                                                                            margin-right: 0.2777777777777778em;
+                                                                        "
+                                                                    ></span
+                                                                    ><span
+                                                                        class="mrel"
+                                                                        >∈</span
+                                                                    ><span
+                                                                        class="mspace"
+                                                                        style="
+                                                                            margin-right: 0.2777777777777778em;
+                                                                        "
+                                                                    ></span></span
+                                                                ><span
+                                                                    class="base"
+                                                                    ><span
+                                                                        class="strut"
+                                                                        style="
+                                                                            height: 0.771331em;
+                                                                            vertical-align: 0em;
+                                                                        "
+                                                                    ></span
+                                                                    ><span
+                                                                        class="mord"
+                                                                        ><span
+                                                                            class="mord mathbb"
+                                                                            >Z</span
+                                                                        ><span
+                                                                            class="msupsub"
+                                                                            ><span
+                                                                                class="vlist-t"
+                                                                                ><span
+                                                                                    class="vlist-r"
+                                                                                    ><span
+                                                                                        class="vlist"
+                                                                                        style="
+                                                                                            height: 0.771331em;
+                                                                                        "
+                                                                                        ><span
+                                                                                            style="
+                                                                                                top: -3.063em;
+                                                                                                margin-right: 0.05em;
+                                                                                            "
+                                                                                            ><span
+                                                                                                class="pstrut"
+                                                                                                style="
+                                                                                                    height: 2.7em;
+                                                                                                "
+                                                                                            ></span
+                                                                                            ><span
+                                                                                                class="sizing reset-size6 size3 mtight"
+                                                                                                ><span
+                                                                                                    class="mbin mtight"
+                                                                                                    >+</span
+                                                                                                ></span
+                                                                                            ></span
+                                                                                        ></span
+                                                                                    ></span
+                                                                                ></span
+                                                                            ></span
+                                                                        ></span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ></span
+                                                    ><span>﻿</span></span
+                                                >
+                                                (orden del plano) tal que:
+                                            </h2>
+                                            <ul
+                                                id="2312eb61-f6ea-4622-8be8-40a4764a1040"
+                                                class="bulleted-list"
+                                            >
+                                                <li
+                                                    style="
+                                                        list-style-type: disc;
+                                                    "
+                                                >
+                                                    <style>
+                                                        @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                    ><span
+                                                        data-token-index="0"
+                                                        contenteditable="false"
+                                                        class="notion-text-equation-token"
+                                                        style="
+                                                            user-select: all;
+                                                            -webkit-user-select: all;
+                                                            -moz-user-select: all;
+                                                        "
+                                                        ><span></span
+                                                        ><span
+                                                            ><span class="katex"
+                                                                ><span
+                                                                    class="katex-mathml"
+                                                                    ><math
+                                                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                        ><semantics
+                                                                            ><mrow
+                                                                                ><mi
+                                                                                    >P</mi
+                                                                                ></mrow
+                                                                            ><annotation
+                                                                                encoding="application/x-tex"
+                                                                                >P</annotation
+                                                                            ></semantics
+                                                                        ></math
+                                                                    ></span
+                                                                ><span
+                                                                    class="katex-html"
+                                                                    aria-hidden="true"
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.68333em;
+                                                                                vertical-align: 0em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord mathnormal"
+                                                                            style="
+                                                                                margin-right: 0.13889em;
+                                                                            "
+                                                                            >P</span
+                                                                        ></span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ><span>﻿</span></span
+                                                    >
+                                                    tiene
+                                                    <style>
+                                                        @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                    ><span
+                                                        data-token-index="0"
+                                                        contenteditable="false"
+                                                        class="notion-text-equation-token"
+                                                        style="
+                                                            user-select: all;
+                                                            -webkit-user-select: all;
+                                                            -moz-user-select: all;
+                                                        "
+                                                        ><span></span
+                                                        ><span
+                                                            ><span class="katex"
+                                                                ><span
+                                                                    class="katex-mathml"
+                                                                    ><math
+                                                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                        ><semantics
+                                                                            ><mrow
+                                                                                ><msup
+                                                                                    ><mi
+                                                                                        >n</mi
+                                                                                    ><mn
+                                                                                        >2</mn
+                                                                                    ></msup
+                                                                                ></mrow
+                                                                            ><annotation
+                                                                                encoding="application/x-tex"
+                                                                                >n^2</annotation
+                                                                            ></semantics
+                                                                        ></math
+                                                                    ></span
+                                                                ><span
+                                                                    class="katex-html"
+                                                                    aria-hidden="true"
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.8141079999999999em;
+                                                                                vertical-align: 0em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord"
+                                                                            ><span
+                                                                                class="mord mathnormal"
+                                                                                >n</span
+                                                                            ><span
+                                                                                class="msupsub"
+                                                                                ><span
+                                                                                    class="vlist-t"
+                                                                                    ><span
+                                                                                        class="vlist-r"
+                                                                                        ><span
+                                                                                            class="vlist"
+                                                                                            style="
+                                                                                                height: 0.8141079999999999em;
+                                                                                            "
+                                                                                            ><span
+                                                                                                style="
+                                                                                                    top: -3.063em;
+                                                                                                    margin-right: 0.05em;
+                                                                                                "
+                                                                                                ><span
+                                                                                                    class="pstrut"
+                                                                                                    style="
+                                                                                                        height: 2.7em;
+                                                                                                    "
+                                                                                                ></span
+                                                                                                ><span
+                                                                                                    class="sizing reset-size6 size3 mtight"
+                                                                                                    ><span
+                                                                                                        class="mord mtight"
+                                                                                                        >2</span
+                                                                                                    ></span
+                                                                                                ></span
+                                                                                            ></span
+                                                                                        ></span
+                                                                                    ></span
+                                                                                ></span
+                                                                            ></span
+                                                                        ></span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ><span>﻿</span></span
+                                                    >
+                                                    elementos
+                                                </li>
+                                            </ul>
+                                            <ul
+                                                id="892d9adf-e5a0-454c-bc35-e06f6f9c6a44"
+                                                class="bulleted-list"
+                                            >
+                                                <li
+                                                    style="
+                                                        list-style-type: disc;
+                                                    "
+                                                >
+                                                    Cada línea tiene
+                                                    <style>
+                                                        @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                    ><span
+                                                        data-token-index="0"
+                                                        contenteditable="false"
+                                                        class="notion-text-equation-token"
+                                                        style="
+                                                            user-select: all;
+                                                            -webkit-user-select: all;
+                                                            -moz-user-select: all;
+                                                        "
+                                                        ><span></span
+                                                        ><span
+                                                            ><span class="katex"
+                                                                ><span
+                                                                    class="katex-mathml"
+                                                                    ><math
+                                                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                        ><semantics
+                                                                            ><mrow
+                                                                                ><mi
+                                                                                    >n</mi
+                                                                                ></mrow
+                                                                            ><annotation
+                                                                                encoding="application/x-tex"
+                                                                                >n
+                                                                            </annotation></semantics
+                                                                        ></math
+                                                                    ></span
+                                                                ><span
+                                                                    class="katex-html"
+                                                                    aria-hidden="true"
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.43056em;
+                                                                                vertical-align: 0em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord mathnormal"
+                                                                            >n</span
+                                                                        ></span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ><span>﻿</span></span
+                                                    >
+                                                    elementos
+                                                </li>
+                                            </ul>
+                                            <ul
+                                                id="0fed3263-f034-4fc4-81cc-36d3149bb855"
+                                                class="bulleted-list"
+                                            >
+                                                <li
+                                                    style="
+                                                        list-style-type: disc;
+                                                    "
+                                                >
+                                                    En cada dirección hay
+                                                    <style>
+                                                        @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                    ><span
+                                                        data-token-index="0"
+                                                        contenteditable="false"
+                                                        class="notion-text-equation-token"
+                                                        style="
+                                                            user-select: all;
+                                                            -webkit-user-select: all;
+                                                            -moz-user-select: all;
+                                                        "
+                                                        ><span></span
+                                                        ><span
+                                                            ><span class="katex"
+                                                                ><span
+                                                                    class="katex-mathml"
+                                                                    ><math
+                                                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                        ><semantics
+                                                                            ><mrow
+                                                                                ><mi
+                                                                                    >n</mi
+                                                                                ></mrow
+                                                                            ><annotation
+                                                                                encoding="application/x-tex"
+                                                                                >n</annotation
+                                                                            ></semantics
+                                                                        ></math
+                                                                    ></span
+                                                                ><span
+                                                                    class="katex-html"
+                                                                    aria-hidden="true"
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.43056em;
+                                                                                vertical-align: 0em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord mathnormal"
+                                                                            >n</span
+                                                                        ></span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ><span>﻿</span></span
+                                                    >
+                                                    líneas
+                                                </li>
+                                            </ul>
+                                            <ul
+                                                id="0851838b-4c50-4746-91ae-ebc9db70c1ed"
+                                                class="bulleted-list"
+                                            >
+                                                <li
+                                                    style="
+                                                        list-style-type: disc;
+                                                    "
+                                                >
+                                                    Por cada punto pasan
+                                                    <style>
+                                                        @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                    ><span
+                                                        data-token-index="0"
+                                                        contenteditable="false"
+                                                        class="notion-text-equation-token"
+                                                        style="
+                                                            user-select: all;
+                                                            -webkit-user-select: all;
+                                                            -moz-user-select: all;
+                                                        "
+                                                        ><span></span
+                                                        ><span
+                                                            ><span class="katex"
+                                                                ><span
+                                                                    class="katex-mathml"
+                                                                    ><math
+                                                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                        ><semantics
+                                                                            ><mrow
+                                                                                ><mi
+                                                                                    >n</mi
+                                                                                ><mo
+                                                                                    >+</mo
+                                                                                ><mn
+                                                                                    >1</mn
+                                                                                ></mrow
+                                                                            ><annotation
+                                                                                encoding="application/x-tex"
+                                                                                >n+1</annotation
+                                                                            ></semantics
+                                                                        ></math
+                                                                    ></span
+                                                                ><span
+                                                                    class="katex-html"
+                                                                    aria-hidden="true"
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.66666em;
+                                                                                vertical-align: -0.08333em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord mathnormal"
+                                                                            >n</span
+                                                                        ><span
+                                                                            class="mspace"
+                                                                            style="
+                                                                                margin-right: 0.2222222222222222em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mbin"
+                                                                            >+</span
+                                                                        ><span
+                                                                            class="mspace"
+                                                                            style="
+                                                                                margin-right: 0.2222222222222222em;
+                                                                            "
+                                                                        ></span></span
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.64444em;
+                                                                                vertical-align: 0em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord"
+                                                                            >1</span
+                                                                        ></span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ><span>﻿</span></span
+                                                    >
+                                                    líneas
+                                                </li>
+                                            </ul>
+                                            <ul
+                                                id="8175c440-202b-4184-a63f-14cf2f6d3c66"
+                                                class="bulleted-list"
+                                            >
+                                                <li
+                                                    style="
+                                                        list-style-type: disc;
+                                                    "
+                                                >
+                                                    Hay exactamente
+                                                    <style>
+                                                        @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                    ><span
+                                                        data-token-index="0"
+                                                        contenteditable="false"
+                                                        class="notion-text-equation-token"
+                                                        style="
+                                                            user-select: all;
+                                                            -webkit-user-select: all;
+                                                            -moz-user-select: all;
+                                                        "
+                                                        ><span></span
+                                                        ><span
+                                                            ><span class="katex"
+                                                                ><span
+                                                                    class="katex-mathml"
+                                                                    ><math
+                                                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                        ><semantics
+                                                                            ><mrow
+                                                                                ><mi
+                                                                                    >n</mi
+                                                                                ><mo
+                                                                                    >+</mo
+                                                                                ><mn
+                                                                                    >1</mn
+                                                                                ></mrow
+                                                                            ><annotation
+                                                                                encoding="application/x-tex"
+                                                                                >n+1</annotation
+                                                                            ></semantics
+                                                                        ></math
+                                                                    ></span
+                                                                ><span
+                                                                    class="katex-html"
+                                                                    aria-hidden="true"
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.66666em;
+                                                                                vertical-align: -0.08333em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord mathnormal"
+                                                                            >n</span
+                                                                        ><span
+                                                                            class="mspace"
+                                                                            style="
+                                                                                margin-right: 0.2222222222222222em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mbin"
+                                                                            >+</span
+                                                                        ><span
+                                                                            class="mspace"
+                                                                            style="
+                                                                                margin-right: 0.2222222222222222em;
+                                                                            "
+                                                                        ></span></span
+                                                                    ><span
+                                                                        class="base"
+                                                                        ><span
+                                                                            class="strut"
+                                                                            style="
+                                                                                height: 0.64444em;
+                                                                                vertical-align: 0em;
+                                                                            "
+                                                                        ></span
+                                                                        ><span
+                                                                            class="mord"
+                                                                            >1</span
+                                                                        ></span
+                                                                    ></span
+                                                                ></span
+                                                            ></span
+                                                        ><span>﻿</span></span
+                                                    >
+                                                    direcciones
+                                                </li>
+                                            </ul>
+                                            <h2
+                                                id="c992505e-2652-40c1-a7bb-2b849f990b0d"
+                                                class=""
+                                            >
+                                                Veamos a continuación las
+                                                principales direcciones en
+                                                <style>
+                                                    @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                ><span
+                                                    data-token-index="0"
+                                                    contenteditable="false"
+                                                    class="notion-text-equation-token"
+                                                    style="
+                                                        user-select: all;
+                                                        -webkit-user-select: all;
+                                                        -moz-user-select: all;
+                                                    "
+                                                    ><span></span
+                                                    ><span
+                                                        ><span class="katex"
+                                                            ><span
+                                                                class="katex-mathml"
+                                                                ><math
+                                                                    xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                    ><semantics
+                                                                        ><mrow
+                                                                            ><msub
+                                                                                ><mi
+                                                                                    mathvariant="double-struck"
+                                                                                    >P</mi
+                                                                                ><mn
+                                                                                    >9</mn
+                                                                                ></msub
+                                                                            ></mrow
+                                                                        ><annotation
+                                                                            encoding="application/x-tex"
+                                                                            >\mathbb{P}_{9}</annotation
+                                                                        ></semantics
+                                                                    ></math
+                                                                ></span
+                                                            ><span
+                                                                class="katex-html"
+                                                                aria-hidden="true"
+                                                                ><span
+                                                                    class="base"
+                                                                    ><span
+                                                                        class="strut"
+                                                                        style="
+                                                                            height: 0.83889em;
+                                                                            vertical-align: -0.15em;
+                                                                        "
+                                                                    ></span
+                                                                    ><span
+                                                                        class="mord"
+                                                                        ><span
+                                                                            class="mord mathbb"
+                                                                            >P</span
+                                                                        ><span
+                                                                            class="msupsub"
+                                                                            ><span
+                                                                                class="vlist-t vlist-t2"
+                                                                                ><span
+                                                                                    class="vlist-r"
+                                                                                    ><span
+                                                                                        class="vlist"
+                                                                                        style="
+                                                                                            height: 0.30110799999999993em;
+                                                                                        "
+                                                                                        ><span
+                                                                                            style="
+                                                                                                top: -2.5500000000000003em;
+                                                                                                margin-left: 0em;
+                                                                                                margin-right: 0.05em;
+                                                                                            "
+                                                                                            ><span
+                                                                                                class="pstrut"
+                                                                                                style="
+                                                                                                    height: 2.7em;
+                                                                                                "
+                                                                                            ></span
+                                                                                            ><span
+                                                                                                class="sizing reset-size6 size3 mtight"
+                                                                                                ><span
+                                                                                                    class="mord mtight"
+                                                                                                    ><span
+                                                                                                        class="mord mtight"
+                                                                                                        >9</span
+                                                                                                    ></span
+                                                                                                ></span
+                                                                                            ></span
+                                                                                        ></span
+                                                                                    ><span
+                                                                                        class="vlist-s"
+                                                                                        >​</span
+                                                                                    ></span
+                                                                                ><span
+                                                                                    class="vlist-r"
+                                                                                    ><span
+                                                                                        class="vlist"
+                                                                                        style="
+                                                                                            height: 0.15em;
+                                                                                        "
+                                                                                        ><span></span></span></span></span></span></span></span></span></span></span
+                                                    ><span>﻿</span></span
+                                                >
+                                                y
+                                                <style>
+                                                    @import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css");</style
+                                                ><span
+                                                    data-token-index="0"
+                                                    contenteditable="false"
+                                                    class="notion-text-equation-token"
+                                                    style="
+                                                        user-select: all;
+                                                        -webkit-user-select: all;
+                                                        -moz-user-select: all;
+                                                    "
+                                                    ><span></span
+                                                    ><span
+                                                        ><span class="katex"
+                                                            ><span
+                                                                class="katex-mathml"
+                                                                ><math
+                                                                    xmlns="http://www.w3.org/1998/Math/MathML"
+                                                                    ><semantics
+                                                                        ><mrow
+                                                                            ><msub
+                                                                                ><mi
+                                                                                    mathvariant="double-struck"
+                                                                                    >P</mi
+                                                                                ><mn
+                                                                                    >25</mn
+                                                                                ></msub
+                                                                            ></mrow
+                                                                        ><annotation
+                                                                            encoding="application/x-tex"
+                                                                            >\mathbb{P}_{25}</annotation
+                                                                        ></semantics
+                                                                    ></math
+                                                                ></span
+                                                            ><span
+                                                                class="katex-html"
+                                                                aria-hidden="true"
+                                                                ><span
+                                                                    class="base"
+                                                                    ><span
+                                                                        class="strut"
+                                                                        style="
+                                                                            height: 0.83889em;
+                                                                            vertical-align: -0.15em;
+                                                                        "
+                                                                    ></span
+                                                                    ><span
+                                                                        class="mord"
+                                                                        ><span
+                                                                            class="mord mathbb"
+                                                                            >P</span
+                                                                        ><span
+                                                                            class="msupsub"
+                                                                            ><span
+                                                                                class="vlist-t vlist-t2"
+                                                                                ><span
+                                                                                    class="vlist-r"
+                                                                                    ><span
+                                                                                        class="vlist"
+                                                                                        style="
+                                                                                            height: 0.30110799999999993em;
+                                                                                        "
+                                                                                        ><span
+                                                                                            style="
+                                                                                                top: -2.5500000000000003em;
+                                                                                                margin-left: 0em;
+                                                                                                margin-right: 0.05em;
+                                                                                            "
+                                                                                            ><span
+                                                                                                class="pstrut"
+                                                                                                style="
+                                                                                                    height: 2.7em;
+                                                                                                "
+                                                                                            ></span
+                                                                                            ><span
+                                                                                                class="sizing reset-size6 size3 mtight"
+                                                                                                ><span
+                                                                                                    class="mord mtight"
+                                                                                                    ><span
+                                                                                                        class="mord mtight"
+                                                                                                        >25</span
+                                                                                                    ></span
+                                                                                                ></span
+                                                                                            ></span
+                                                                                        ></span
+                                                                                    ><span
+                                                                                        class="vlist-s"
+                                                                                        >​</span
+                                                                                    ></span
+                                                                                ><span
+                                                                                    class="vlist-r"
+                                                                                    ><span
+                                                                                        class="vlist"
+                                                                                        style="
+                                                                                            height: 0.15em;
+                                                                                        "
+                                                                                        ><span></span></span></span></span></span></span></span></span></span></span
+                                                    ><span>﻿</span></span
+                                                >
+                                                respectivamente
+                                            </h2>
+                                            <p
+                                                id="f0d7d71c-bb4b-4e76-b3dd-be286228b959"
+                                                class=""
+                                            ></p>
+                                            <div
+                                                id="ab43fb73-c425-4386-a2be-c3600d81394c"
+                                                class="column-list"
+                                            >
+                                                <div
+                                                    id="713734e0-d401-4c77-af3e-2fcc8bdb620b"
+                                                    style="width: 50%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="8535afad-3bdc-4db5-9a64-5353f191e36c"
+                                                        class="image"
+                                                        style="text-align: left"
+                                                    >
+                                                        <a
+                                                            href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Lneas_P9.png"
+                                                            ><img
+                                                                style="
+                                                                    width: 336px;
+                                                                "
+                                                                src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Lneas_P9.png"
+                                                        /></a>
+                                                        <figcaption>
+                                                            Direcciones
+                                                            principales en un
+                                                            plano afín con orden
+                                                            3
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div
+                                                    id="f65cbcef-cf10-4612-b066-1ece23c4bb65"
+                                                    style="width: 50%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="fa3c3fa6-d4f0-4a83-902f-575473b558da"
+                                                        class="image"
+                                                    >
+                                                        <a
+                                                            href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Lneas_P25.png"
+                                                            ><img
+                                                                style="
+                                                                    width: 336px;
+                                                                "
+                                                                src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Lneas_P25.png"
+                                                        /></a>
+                                                        <figcaption>
+                                                            Direcciones
+                                                            principales en un
+                                                            plano afín con orden
+                                                            5
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <h2
+                                                id="b16165be-8617-4745-a3d4-bf835ad57554"
+                                                class=""
+                                            >
+                                                Aquí algunos ejemplos más de
+                                                todas las líneas respectivas a
+                                                algunos planos de ordenes altos.
+                                            </h2>
+                                            <div
+                                                id="d0900436-7b85-41ec-ba95-d7b26adb41e0"
+                                                class="column-list"
+                                            >
+                                                <div
+                                                    id="04e068c1-359a-4b4a-a5bb-56535d567530"
+                                                    style="width: 50%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="1be1f5d7-720e-429a-bced-3073d538910f"
+                                                        class="image"
+                                                    >
+                                                        <a
+                                                            href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled.png"
+                                                            ><img
+                                                                style="
+                                                                    width: 336px;
+                                                                "
+                                                                src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled.png"
+                                                        /></a>
+                                                        <figcaption>
+                                                            Líneas del plano
+                                                            afín con orden 2
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div
+                                                    id="857a651d-251b-4e0a-9a66-e5652e8dbd76"
+                                                    style="width: 50%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="500787d4-4adf-4d58-8859-491881c1a73d"
+                                                        class="image"
+                                                        style="
+                                                            text-align: right;
+                                                        "
+                                                    >
+                                                        <a
+                                                            href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%201.png"
+                                                            ><img
+                                                                style="
+                                                                    width: 530px;
+                                                                "
+                                                                src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%201.png"
+                                                        /></a>
+                                                        <figcaption>
+                                                            Líneas del plano
+                                                            afín con orden 4
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <figure
+                                                id="8c03c35c-175b-4211-9daf-cc0d43282805"
+                                                class="image"
+                                            >
+                                                <a
+                                                    href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%202.png"
+                                                    ><img
+                                                        style="width: 432px"
+                                                        src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%202.png"
+                                                /></a>
+                                                <figcaption>
+                                                    Líneas del plano afín con
+                                                    orden 8
+                                                </figcaption>
+                                            </figure>
+                                            <h2
+                                                id="753d3953-d06d-4122-842a-5b37b9d4795e"
+                                                class=""
+                                            >
+                                                Puedes notar que cuando el orden
+                                                se incrementa en números pares,
+                                                parece guardase siempre una
+                                                simetría entre estos planos, es
+                                                decir, parece ser una réplica
+                                                del menor plano con orden par
+                                                pero repetido varias veces y
+                                                extendido.
+                                            </h2>
+                                            <h2
+                                                id="882fd0ea-a29b-4e6d-b36f-f5a0eadd6518"
+                                                class=""
+                                            >
+                                                Veamos ahora los planos con
+                                                orden impar, más
+                                                específicamente, los planos con
+                                                orden 3,5 y 9
+                                            </h2>
+                                            <div
+                                                id="c9a455bd-8ef1-4e41-9c47-c392b5bd7690"
+                                                class="column-list"
+                                            >
+                                                <div
+                                                    id="3d2f52f5-0e57-4288-ac93-d0c45ab7c470"
+                                                    style="width: 50%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="9ab5c878-06b3-482c-a188-1ed750fd86b3"
+                                                        class="image"
+                                                        style="text-align: left"
+                                                    >
+                                                        <a
+                                                            href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%203.png"
+                                                            ><img
+                                                                style="
+                                                                    width: 528px;
+                                                                "
+                                                                src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%203.png"
+                                                        /></a>
+                                                        <figcaption>
+                                                            Líneas del plano
+                                                            afín con orden 3
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div
+                                                    id="068fba2f-f0db-4011-b1b6-7e9ac4b38a00"
+                                                    style="width: 50%"
+                                                    class="column"
+                                                >
+                                                    <figure
+                                                        id="cdadfac4-50be-40a8-98ea-d0ef3fb994c6"
+                                                        class="image"
+                                                    >
+                                                        <a
+                                                            href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%204.png"
+                                                            ><img
+                                                                style="
+                                                                    width: 528px;
+                                                                "
+                                                                src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%204.png"
+                                                        /></a>
+                                                        <figcaption>
+                                                            Líneas del plano
+                                                            afín con orden 5
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <figure
+                                                id="29f0c168-d81f-4024-bffd-463c2c459c8b"
+                                                class="image"
+                                            >
+                                                <a
+                                                    href="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%205.png"
+                                                    ><img
+                                                        style="width: 480px"
+                                                        src="Planos%20afines%20571243b49479402681e6759eb55ac9b5/Untitled%205.png"
+                                                /></a>
+                                                <figcaption>
+                                                    Líneas del plano afín con
+                                                    orden 9
+                                                </figcaption>
+                                            </figure>
+                                            <h2
+                                                id="a717d55a-ddd5-421c-9969-faa76afb794e"
+                                                class=""
+                                            >
+                                                Puedes darte cuenta que de nuevo
+                                                la estructura de estos planos se
+                                                mantiene constante. Parecen
+                                                ampliaciones del menor plano con
+                                                orden impar.
+                                            </h2>
+                                            <h2
+                                                id="2be16e1a-1490-4b85-9932-080185d8d026"
+                                                class=""
+                                            >
+                                                En realidad (aunque parezca
+                                                evidente) esto nos indica que
+                                                los números impares y pares
+                                                guardan propiedades muy
+                                                interesantes. En el curso de
+                                                Geometría Elemental trabajarás
+                                                específicamente con curiosas
+                                                propiedades de los números 2 y
+                                                3, que determinan en gran parte
+                                                la forma y generación de
+                                                dilataciones y otras
+                                                trasformaciones.
+                                            </h2>
+                                            <p
+                                                id="36e64431-44c4-4e91-8b80-03da92ffafb4"
+                                                class=""
+                                            ></p>
+                                            <p
+                                                id="f8a080d8-f1b4-4d12-aae1-548997d90e72"
+                                                class=""
+                                            >
+                                                Importación de librerías
+                                            </p>
+                                            <p
+                                                id="5d3cd55e-68f5-4917-8477-d18f3fe9004b"
+                                                class=""
+                                            >
+                                                Encontramos el código en este
+                                                repositorio de GitHub
+                                            </p>
+                                            <p
+                                                id="bdc88f74-d76b-4f07-97b5-eef65ff07b43"
+                                                class=""
+                                            ></p>
+                                        </div>
+                                    </section>
+                                    <!-- <h1>
+                                            Markdown Files<a
+                                                class="headerlink"
+                                                href="#markdown-files"
+                                                title="Permalink to this headline"
+                                                >#</a
+                                            >
+                                        </h1>
+                                        <p>
+                                            Whether you write your book’s
+                                            content in Jupyter Notebooks (<code
+                                                class="docutils literal notranslate"
+                                                ><span class="pre"
+                                                    >.ipynb</span
+                                                ></code
+                                            >) or in regular markdown files
+                                            (<code
+                                                class="docutils literal notranslate"
+                                                ><span class="pre"
+                                                    >.md</span
+                                                ></code
+                                            >), you’ll write in the same flavor
+                                            of markdown called
+                                            <strong>MyST Markdown</strong>. This
+                                            is a simple file to help you get
+                                            started and show off some syntax.
+                                        </p>
+                                        <section id="what-is-myst">
+                                            <h2>
+                                                What is MyST?<a
+                                                    class="headerlink"
+                                                    href="#what-is-myst"
+                                                    title="Permalink to this headline"
+                                                    >#</a
+                                                >
+                                            </h2>
+                                            <p>
+                                                MyST stands for “Markedly
+                                                Structured Text”. It is a slight
+                                                variation on a flavor of
+                                                markdown called “CommonMark”
+                                                markdown, with small syntax
+                                                extensions to allow you to write
+                                                <strong>roles</strong> and
+                                                <strong>directives</strong> in
+                                                the Sphinx ecosystem.
+                                            </p>
+                                            <p>
+                                                For more about MyST, see
+                                                <a
+                                                    class="reference external"
+                                                    href="https://jupyterbook.org/content/myst.html"
+                                                    >the MyST Markdown
+                                                    Overview</a
+                                                >.
+                                            </p>
+                                        </section>
+                                        <section
+                                            id="sample-roles-and-directives"
+                                        >
+                                            <h2>
+                                                Sample Roles and Directives<a
+                                                    class="headerlink"
+                                                    href="#sample-roles-and-directives"
+                                                    title="Permalink to this headline"
+                                                    >#</a
+                                                >
+                                            </h2>
+                                            <p>
+                                                Roles and directives are two of
+                                                the most powerful tools in
+                                                Jupyter Book. They are kind of
+                                                like functions, but written in a
+                                                markup language. They both serve
+                                                a similar purpose, but
+                                                <strong
+                                                    >roles are written in one
+                                                    line</strong
+                                                >, whereas
+                                                <strong
+                                                    >directives span many
+                                                    lines</strong
+                                                >. They both accept different
+                                                kinds of inputs, and what they
+                                                do with those inputs depends on
+                                                the specific role or directive
+                                                that is being called.
+                                            </p>
+                                            <p>Here is a “note” directive:</p>
+                                            <div class="admonition note">
+                                                <p class="admonition-title">
+                                                    Note
+                                                </p>
+                                                <p>Here is a note</p>
+                                            </div>
+                                            <p>
+                                                It will be rendered in a special
+                                                box when you build your book.
+                                            </p>
+                                            <p>
+                                                Here is an inline directive to
+                                                refer to a document:
+                                                <a
+                                                    class="reference internal"
+                                                    href="markdown-notebooks.html"
+                                                    ><span class="doc"
+                                                        >Notebooks with MyST
+                                                        Markdown</span
+                                                    ></a
+                                                >.
+                                            </p>
+                                        </section>
+                                        <section id="citations">
+                                            <h2>
+                                                Citations<a
+                                                    class="headerlink"
+                                                    href="#citations"
+                                                    title="Permalink to this headline"
+                                                    >#</a
+                                                >
+                                            </h2>
+                                            <p>
+                                                You can also cite references
+                                                that are stored in a
+                                                <code
+                                                    class="docutils literal notranslate"
+                                                    ><span class="pre"
+                                                        >bibtex</span
+                                                    ></code
+                                                >
+                                                file. For example, the following
+                                                syntax:
+                                                <code
+                                                    class="docutils literal notranslate"
+                                                    ><span class="pre"
+                                                        >{cite}`holdgraf_evidence_2014`</span
+                                                    ></code
+                                                >
+                                                will render like this:
+                                                <span id="id1"
+                                                    >[<a
+                                                        class="reference internal"
+                                                        href="#id3"
+                                                        title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience."
+                                                        >HdHPK14</a
+                                                    >]</span
+                                                >.
+                                            </p>
+                                            <p>
+                                                Moreover, you can insert a
+                                                bibliography into your page with
+                                                this syntax: The
+                                                <code
+                                                    class="docutils literal notranslate"
+                                                    ><span class="pre"
+                                                        >{bibliography}</span
+                                                    ></code
+                                                >
+                                                directive must be used for all
+                                                the
+                                                <code
+                                                    class="docutils literal notranslate"
+                                                    ><span class="pre"
+                                                        >{cite}</span
+                                                    ></code
+                                                >
+                                                roles to render properly. For
+                                                example, if the references for
+                                                your book are stored in
+                                                <code
+                                                    class="docutils literal notranslate"
+                                                    ><span class="pre"
+                                                        >references.bib</span
+                                                    ></code
+                                                >, then the bibliography is
+                                                inserted with:
+                                            </p>
+                                            <div
+                                                class="docutils container"
+                                                id="id2"
+                                            >
+                                                <dl class="citation">
+                                                    <dt class="label" id="id3">
+                                                        <span class="brackets"
+                                                            ><a
+                                                                class="fn-backref"
+                                                                href="#id1"
+                                                                >HdHPK14</a
+                                                            ></span
+                                                        >
+                                                    </dt>
+                                                    <dd>
+                                                        <p>
+                                                            Christopher Ramsay
+                                                            Holdgraf, Wendy
+                                                            de Heer, Brian N.
+                                                            Pasley, and
+                                                            Robert T. Knight.
+                                                            Evidence for
+                                                            Predictive Coding in
+                                                            Human Auditory
+                                                            Cortex. In
+                                                            <em
+                                                                >International
+                                                                Conference on
+                                                                Cognitive
+                                                                Neuroscience</em
+                                                            >. Brisbane,
+                                                            Australia,
+                                                            Australia, 2014.
+                                                            Frontiers in
+                                                            Neuroscience.
+                                                        </p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </section>
+                                        <section id="learn-more">
+                                            <h2>
+                                                Learn more<a
+                                                    class="headerlink"
+                                                    href="#learn-more"
+                                                    title="Permalink to this headline"
+                                                    >#</a
+                                                >
+                                            </h2>
+                                            <p>
+                                                This is just a simple starter to
+                                                get you started. You can learn a
+                                                lot more at
+                                                <a
+                                                    class="reference external"
+                                                    href="https://jupyterbook.org"
+                                                    >jupyterbook.org</a
+                                                >.
+                                            </p>
+                                        </section>
+                                    </section> -->
+
+                                    <script type="text/x-thebe-config">
+                                        {
+                                            requestKernel: true,
+                                            binderOptions: {
+                                                repo: "binder-examples/jupyter-stacks-datascience",
+                                                ref: "master",
+                                            },
+                                            codeMirrorConfig: {
+                                                theme: "abcdef",
+                                                mode: "python"
+                                            },
+                                            kernelOptions: {
+                                                kernelName: "python3",
+                                                path: "./."
+                                            },
+                                            predefinedOutput: true
+                                        }
+                                    </script>
+                                    <script>
+                                        kernelName = "python3";
+                                    </script>
+                                </div>
+                            </main>
+                            <footer class="footer-article noprint">
+                                <!-- Previous / next buttons -->
+                                <div class="prev-next-area">
+                                    <a
+                                        class="left-prev"
+                                        id="prev-link"
+                                        href="intro.html"
+                                        title="previous page"
+                                    >
+                                        <i class="fas fa-angle-left"></i>
+                                        <div class="prev-next-info">
+                                            <p class="prev-next-subtitle">
+                                                previous
+                                            </p>
+                                            <p class="prev-next-title">
+                                                Welcome to your Jupyter Book
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a
+                                        class="right-next"
+                                        id="next-link"
+                                        href="notebooks.html"
+                                        title="next page"
+                                    >
+                                        <div class="prev-next-info">
+                                            <p class="prev-next-subtitle">
+                                                next
+                                            </p>
+                                            <p class="prev-next-title">
+                                                Content with notebooks
+                                            </p>
+                                        </div>
+                                        <i class="fas fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="footer-content row">
+                        <footer class="col footer">
+                            <p>
+                                By The Jupyter Book Community<br />
+
+                                &copy; Copyright 2022.<br />
+                            </p>
+                        </footer>
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
-</section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Permalink to this headline">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
-</section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
-</div>
-</section>
-<section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this headline">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
-</section>
-</section>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="notebooks.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By The Jupyter Book Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
 
-
-      </div>
-    </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
-
-  </body>
+        <!-- Scripts loaded after <body> so the DOM is not blocked -->
+        <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+    </body>
 </html>
